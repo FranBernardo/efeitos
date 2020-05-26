@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>exemplo</title>
+    <style>
+        body{
+            background-color: rgb(16, 2, 34);
+            color: blanchedalmond;
+        }
+        h1{
+            text-align: center;
+            font-size: 45px;
+
+        } 
+        p{
+            text-align: center;
+            font-size: 3em;
+        
+  transform: scale(0.2) translateY(50vh);
+  opacity: 0;
+  animation: 15s ease 4000ms animacaoTitulo forwards;
+}
+
+@keyframes animacaoTitulo {
+  from {
+    transform: scale(0.2) translateY(50vh);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+    </style>
+</head>
+<body>
+    
+<h1>Esse é o efeito de digitação que você pode por no seu site.</h1>
+<script>
+    function digitar(elemento) {
+        const texto = elemento.innerHTML.split('');
+        elemento.innerHTML = '';
+        for(let i = 0; i < texto.length; i++) {
+          setTimeout(() => elemento.innerHTML += texto[i], 90 * i);
+        }
+     }
+     const titulo = document.querySelector('h1');
+     console.log(titulo);
+     digitar(titulo);
+    
+    
+    </script>
+
+
+<p>Esse é outro efeito para texto com a diferença que esse foi feito no css e o outro no javascript, espero que gostem. Logo mais vou fazer tutorial no youtube.</p>
+</body>
+</html>
